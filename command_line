@@ -9,3 +9,5 @@
 (6)host 192.168.0.21\(192.168.0.23\):主机192.168.0.21和192.168.0.23之间通讯的包
 (7)-w ./target.cap : 保存成cap文件，方便用ethereal(即wireshark)分析
 */
+# tcpdump -i eno1 -c 100 -w ./target1.cap ip host 192.168.0.21 and \(192.168.0.23\) and 'tcp[tcpflags]==(tcp-syn)'
+//抓取某两个主机之间并且只有syn信号的tcp协议
